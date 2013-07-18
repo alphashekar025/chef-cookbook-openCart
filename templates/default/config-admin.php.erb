@@ -1,0 +1,32 @@
+<?php
+
+// HTTP
+define('HTTP_SERVER', "http://<%= node['ipaddress'] %>/store/admin/");
+define('HTTP_CATALOG', "http://<%= node['ipaddress'] %>/store/");
+define('HTTP_IMAGE', "http://<%= node['ipaddress'] %>/store/image/");
+
+// HTTPS
+define('HTTPS_SERVER', "http://<%= node['ipaddress'] %>/store/admin/");
+define('HTTPS_IMAGE', "http://<%= node['ipaddress'] %>/store/image/");
+
+// DIR
+define('DIR_APPLICATION', "<%= node['opencart']['dir_admin'] %>");
+define('DIR_SYSTEM', "<%= node['opencart']['dir_system'] %>");
+define('DIR_DATABASE', "<%= node['opencart']['dir_database'] %>");
+define('DIR_LANGUAGE', "<%= node['opencart']['dir_admin']%>language/");
+define('DIR_TEMPLATE', "<%= node['opencart']['dir_admin'] %>view/template/");
+define('DIR_CONFIG', "<%= node['opencart']['dir_config'] %>");
+define('DIR_IMAGE', "<%= node['opencart']['dir_image'] %>");
+define('DIR_CACHE', "<%= node['opencart']['dir_cache'] %>");
+define('DIR_DOWNLOAD', "<%= node['opencart']['dir_download'] %>");
+define('DIR_LOGS', "<%= node['opencart']['dir_logs'] %>");
+define('DIR_CATALOG', "<%=node['opencart']['dir_store'] %>catalog/");
+
+// DB
+define('DB_DRIVER', "<%= node['opencart']['db_driver'] %>");
+define('DB_HOSTNAME', "<%= node['opencart']['db_hostname'] %>");
+define('DB_USERNAME', "<%= node['opencart']['db_username'] %>");
+define('DB_PASSWORD', "<%= node['opencart']['db_password'] %>");
+define('DB_DATABASE', "<%= node['opencart']['db_database'] %>");
+define('DB_PREFIX', "<%= node['opencart']['db_prefix'] %>");
+?>
