@@ -9,10 +9,13 @@ This cookbook requires the following packages.
 #### packages
 - `mysql` 
 - `apache2`
+- `database`
 
 Attributes
 ----------
 #### OpenCart::default
+default['opencart']['version'] = "1.5.1.3.1"
+default['opencart']['file_name'] = "opencart_v1.5.1.3.1"
 default['opencart']['url'] = "http://opencart.googlecode.com/files/#{node['opencart']['file_name']}.zip"
 
 default['opencart']['epel'] = "http://www.gtlib.gatech.edu/pub/fedora-epel/6/i386/epel-release-6-8.noarch.rpm"
@@ -24,44 +27,44 @@ default['opencart']['store_admin_dir'] = "#{node['opencart']['store_dir']}admin/
 
 # config
 
-default['opencart']['http_server'] = "#{node['ipaddress']}/store/"
-default['opencart']['http_image'] = "#{node['ipaddress']}/store/image/"
-default['opencart']['http_admin'] = "#{node['ipaddress']}/store/admin/"
+node['opencart']['http_server'] 
+node['opencart']['http_image'] 
+node['opencart']['http_admin'] 
 
-default['opencart']['https_server'] = "#{node['ipaddress']}/store/"
-default['opencart']['https_image'] = "#{node['ipaddress']}/store/image/"
+node['opencart']['https_server'] 
+node['opencart']['https_image'] 
 
-default['opencart']['dir_application'] = "#{node['opencart']['store_dir']}catalog/"
-default['opencart']['dir_system'] = "#{node['opencart']['store_dir']}system/"
-default['opencart']['dir_database'] = "#{node['opencart']['store_dir']}system/database/"
-default['opencart']['dir_language'] = "#{node['opencart']['store_dir']}catalog/language/"
-default['opencart']['dir_template'] = "#{node['opencart']['store_dir']}catalog/view/theme/"
-default['opencart']['dir_config'] = "#{node['opencart']['store_dir']}system/config/"
-default['opencart']['dir_image'] = "#{node['opencart']['store_dir']}image/"
-default['opencart']['dir_cache'] = "#{node['opencart']['store_dir']}system/cache/"
-default['opencart']['dir_download'] = "#{node['opencart']['store_dir']}download/"
-default['opencart']['dir_logs'] = "#{node['opencart']['store_dir']}system/logs/"
+node['opencart']['dir_application'] 
+node['opencart']['dir_system'] 
+node['opencart']['dir_database'] 
+node['opencart']['dir_language'] 
+node['opencart']['dir_template'] 
+node['opencart']['dir_config'] 
+node['opencart']['dir_image'] 
+node['opencart']['dir_cache'] 
+node['opencart']['dir_download'] 
+node['opencart']['dir_logs'] 
 
 # admin-config 
-default['opencart']['dir_admin'] = "#{node['opencart']['store_dir']}admin/"
-default['opencart']['dir_admin_lag'] = "#{node['opencart']['dir_admin']}language/"
-default['opencart']['dir_admin_template'] = "#{node['opencart']['dir_admin']}view/template/"
-default['opencart']['dir_admin_catalog'] = "#{node['opencart']['store_dir']}catalog/"
+node['opencart']['dir_admin'] 
+node['opencart']['dir_admin_lag'] 
+node['opencart']['dir_admin_template'] 
+node['opencart']['dir_admin_catalog'] 
 
 # db 
-default['opencart']['db_driver'] = 'mysql'
-default['opencart']['db_hostname'] = 'localhost'
-default['opencart']['db_username'] = 'root'
-default['opencart']['db_password'] = 'qwerty'
-default['opencart']['db_database'] = 'opencartdb'
-default['opencart']['db_prefix'] = ''
-default['opencart']['db_database_lib'] = "/var/lib/mysql/#{node['opencart']['db_database']}/"
+node['opencart']['db_driver'] 
+node['opencart']['db_hostname'] 
+node['opencart']['db_username'] 
+node['opencart']['db_password'] 
+node['opencart']['db_database'] 
+node['opencart']['db_prefix'] 
+node['opencart']['db_database_lib'] 
 
 
 
 Usage
 -----
-#### OpenCart::default
+#### OpenCart::node
 
 Just include `OpenCart` in your node's `run_list`:
 
@@ -85,6 +88,17 @@ This is an OpenSource repo. Fell free to fork and improve or make the cookbook m
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
 
-License and Authors
--------------------
-Authors: Shekar N H
+LICENSE:
+========
+
+<table>
+  <tr>
+    <th>Author</th><td>Shekar N H</td>
+  </tr>
+  <tr>
+    <th>Copyright</th><td>Copyright (c) 2013 Sheakr_nh</td>
+  </tr>
+  <tr>
+    <th>License</th><td>GNU GPL_v2</td>
+  </tr>
+</table>
